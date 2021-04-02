@@ -59,7 +59,7 @@ case $yn in
 esac
 
 # VSCODE
-read -p "Install chrome? [y/n] " yn
+read -p "Install vscode? [y/n] " yn
 case $yn in
     sudo apt install -y wget apt-transport-https
     sudo apt update
@@ -80,13 +80,7 @@ case $yn in
     ;;
 esac
 
-# GIMP
 
-read -p "Install vlc? [y/n] " yn
-case $yn in
-    sudo apt install -y gimp
-    ;;
-esac
 
 
 
