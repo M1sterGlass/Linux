@@ -4,22 +4,31 @@ sudo apt update
 sudo apt -y upgrade 
 sudo apt -y dist-upgrade
 sudo apt autoremove
+sudo apt autoclean
 
 df
 free -h
 swapon
 
+# REMOVE
+
+sudo apt -y --purge autoremove thunderbird  thunderbird-gnome-support 
+
 # NETWORKTOOLS
 
-echo "Install networktools? [Y/N]"
-read networktools
-if [[ ! $networktools =~ ^[Yy]$ ]]
-then
-  sudo apt install -y traceroute
-  sudo apt install -y nmap
-  sudo apt install -y iftop
-  sudo apt install -y wireshark
-fi
+read -r -p "Install networktools? [Y/N] " networktools
+case $networktools in
+[yY])
+    sudo apt install -y traceroute
+    sudo apt install -y nmap
+    sudo apt install -y iftop
+    sudo apt install -y wireshark
+;;
+*)
+    echo "Invalid input"
+    exit 1
+;;
+esac
 
 # FIREWALL
 
@@ -31,9 +40,7 @@ sudo ufw status verbose
 # sudo ufw allow 80,443,25,587,465,143,993/tcp
 # cat /var/log/ufw.log
 
-# REMOVE
 
-sudo apt -y --purge autoremove thunderbird  thunderbird-gnome-support 
 
 # CHROME
 
@@ -60,5 +67,18 @@ sudo apt install -y vlc
 # GIMP
 
 sudo apt install -y gimp
+
+# REMOVE DUPLICATE
+sudo -s
+FILE="/etc/apt/sources.list.d/additional-repositories.list"
+ls -la $FILE
+mv $FILE $FILE.bak
+sort $FILE.bak | uniq -u > $FILE
+
+FILE="/etc/apt/sources.list.d/google-chrome.list"
+ls -la $FILE
+mv $FILE $FILE.bak
+sort $FILE.bak | uniq -u > $FILE
+exit
 
 
