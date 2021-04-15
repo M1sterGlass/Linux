@@ -12,7 +12,7 @@ swapon
 
 # REMOVE
 
-sudo apt -y --purge autoremove thunderbird  thunderbird-gnome-support 
+sudo apt --purge autoremove thunderbird  thunderbird-gnome-support -y
 
 # NETWORKTOOLS
 read -p "Install networktools? [y/n] " yn
@@ -61,6 +61,7 @@ esac
 # VSCODE
 read -p "Install vscode? [y/n] " yn
 case $yn in
+    [Yy] )
     sudo apt install -y wget apt-transport-https
     sudo apt update
     curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
@@ -73,15 +74,16 @@ case $yn in
 esac
 
 # VLC
-
 read -p "Install vlc? [y/n] " yn
 case $yn in
+    [Yy] )
     sudo apt install -y vlc
     ;;
 esac
 
 
-
+# /etc/default/grub
+# quiet splash psmouse.synaptics_intertouch=1"
 
 
 
