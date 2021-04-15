@@ -1,18 +1,29 @@
-# LINUX MINT
-
-sudo apt update
-sudo apt upgrade -y 
-sudo apt dist-upgrade -y
-sudo apt autoremove
-sudo apt autoclean
+# SYTEMINFO
 
 df
 free -h
 swapon
 
-# REMOVE
+# LINUX MINT
 
-sudo apt --purge autoremove thunderbird  thunderbird-gnome-support -y
+read -p "Install updates? [y/n] " yn
+case $yn in
+    [Yy] )
+    sudo apt update
+    sudo apt upgrade -y 
+    sudo apt dist-upgrade -y
+    sudo apt autoremove
+    sudo apt autoclean
+    ;;
+esac
+
+# REMOVE
+read -p "Uninstall unused apps? [y/n] " yn
+case $yn in
+    [Yy] )
+    sudo apt --purge autoremove thunderbird  thunderbird-gnome-support -y
+    ;;
+esac
 
 # NETWORKTOOLS
 read -p "Install networktools? [y/n] " yn
