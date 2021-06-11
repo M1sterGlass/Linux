@@ -93,6 +93,19 @@ case $yn in
 esac
 
 
+# FIX MOUSE FREEZE
+read -p "Fix mouse freeze on lenovo? [y/n] " yn
+case $yn in
+    [Yy] )
+    cd /lib/systemd/system-sleep
+    sudo wget https://raw.githubusercontent.com/M1sterGlass/Linux/main/fixmousefreeze.sh
+    sudo chmod +x fixmousefreeze.sh
+    cd ~
+    ;;
+esac
+
+
+
 # /etc/default/grub
 # quiet splash psmouse.synaptics_intertouch=1"
 
