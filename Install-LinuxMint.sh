@@ -92,6 +92,13 @@ case $yn in
     ;;
 esac
 
+# REMMINA
+read -p "Install remmina? [y/n] " yn
+case $yn in
+    [Yy] )
+    sudo apt install -y remmina
+    ;;
+esac
 
 # FIX MOUSE FREEZE
 read -p "Fix mouse freeze on lenovo? [y/n] " yn
