@@ -21,7 +21,7 @@ esac
 read -p "Uninstall unused apps? [y/n] " yn
 case $yn in
     [Yy] )
-    sudo apt --purge autoremove thunderbird  thunderbird-gnome-support -y
+    sudo apt remove thunderbird  thunderbird-gnome-support -y
     ;;
 esac
 
