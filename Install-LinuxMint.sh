@@ -92,6 +92,15 @@ case $yn in
     ;;
 esac
 
+# RETROARCH
+read -p "Install retroarch? [y/n] " yn
+case $yn in
+    [Yy] )
+    sudo add-apt-repository ppa:libretro/stable && sudo apt-get update && sudo apt-get install retroarch
+    ;;
+esac
+
+
 # REMMINA
 read -p "Install remmina? [y/n] " yn
 case $yn in
