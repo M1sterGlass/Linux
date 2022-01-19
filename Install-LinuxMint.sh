@@ -100,6 +100,20 @@ case $yn in
     ;;
 esac
 
+# JOYCON
+read -p "Install joycond? [y/n] " yn
+case $yn in
+    [Yy] )
+    cd ~/Downloads
+    sudo git clone https://github.com/DanielOgorchock/joycond
+    cd ~/Downloads/joycond
+    sudo apt install -y libevdev-devlibudev-dev
+    sudo cmake .
+    sudo make install
+    sudo systemctl enable --now joycond
+    cd ~
+    ;;
+esac
 
 # REMMINA
 read -p "Install remmina? [y/n] " yn
