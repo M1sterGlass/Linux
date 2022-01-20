@@ -120,6 +120,14 @@ case $yn in
     sudo systemctl enable --now joycond
     cd ~
     ;;
+esacsudo apt install steam-installer
+
+# STEAM
+read -p "Install steam? [y/n] " yn
+case $yn in
+    [Yy] )
+    sudo apt install steam-installer
+    ;;
 esac
 
 # REMMINA
