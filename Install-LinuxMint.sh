@@ -138,8 +138,8 @@ case $yn in
     ;;
 esac
 
-# REMMINA
-read -p "Install virtuabox? [y/n] " yn
+# VIRTUALBOX
+read -p "Install virtualbox? [y/n] " yn
 case $yn in
     [Yy] )
     sudo apt install -y virtualbox
