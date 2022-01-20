@@ -96,7 +96,7 @@ esac
 read -p "Install retroarch? [y/n] " yn
 case $yn in
     [Yy] )
-    sudo add-apt-repository ppa:libretro/stable && sudo apt-get update && sudo apt-get install retroarch
+    sudo add-apt-repository ppa:libretro/stable && sudo apt-get update && sudo apt-get install -y retroarch
     ;;
 esac
 
@@ -120,13 +120,13 @@ case $yn in
     sudo systemctl enable --now joycond
     cd ~
     ;;
-esacsudo apt install steam-installer
+esac
 
 # STEAM
 read -p "Install steam? [y/n] " yn
 case $yn in
     [Yy] )
-    sudo apt install steam-installer
+    sudo apt install -y steam-installer
     ;;
 esac
 
@@ -135,6 +135,15 @@ read -p "Install remmina? [y/n] " yn
 case $yn in
     [Yy] )
     sudo apt install -y remmina
+    ;;
+esac
+
+# REMMINA
+read -p "Install virtuabox? [y/n] " yn
+case $yn in
+    [Yy] )
+    sudo apt install -y virtualbox
+    sudo apt install -y virtualbox—ext–pack
     ;;
 esac
 
