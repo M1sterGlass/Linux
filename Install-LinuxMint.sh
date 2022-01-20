@@ -114,7 +114,7 @@ case $yn in
     cd ~/Downloads
     sudo git clone https://github.com/DanielOgorchock/joycond
     cd joycond
-    sudo apt install -y libevdev-devlibudev-dev
+    sudo apt install -y libevdev-dev libudev-dev
     sudo cmake .
     sudo make install
     sudo systemctl enable --now joycond
